@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 
 import productRoutes from "./routes/productRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
 
 import errorMiddleware from "./middleware/errorMiddleware.js";
 
@@ -24,6 +25,8 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use("/products", productRoutes);
+
+app.use("/carts", cartRoutes);
 
 app.use(errorMiddleware);
 
